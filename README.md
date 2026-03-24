@@ -70,6 +70,37 @@ Swagger:
 http://localhost:5000/swagger
 ```
 
+Execucao com Docker:
+
+```powershell
+docker build -f tech-challenges\back_end\teahupoo\Dockerfile -t cnpj-cep-validation .
+docker run --rm -p 8080:8080 cnpj-cep-validation
+```
+
+Swagger no container:
+
+```text
+http://localhost:8080/swagger
+```
+
+Execucao com Docker Compose:
+
+```powershell
+docker compose up --build
+```
+
+Para executar em background:
+
+```powershell
+docker compose up --build -d
+```
+
+Para encerrar:
+
+```powershell
+docker compose down
+```
+
 ## Configuracao
 
 Opcoes em `appsettings.json`:
@@ -80,6 +111,20 @@ Opcoes em `appsettings.json`:
 - `Validation:CepPrimaryRetryCount`
 - `Validation:CepSecondaryRetryCount`
 - `Validation:CacheTtlMinutes`
+
+O arquivo `compose.yaml` aceita sobrescrita via variaveis de ambiente. Exemplo de `.env` na raiz:
+
+```dotenv
+API_PORT=8081
+VALIDATION__PRIMARY_CEP_PROVIDER=ViaCep
+VALIDATION__TIMEOUT_MS=1200
+```
+
+Depois:
+
+```powershell
+docker compose up --build -d
+```
 
 ## Testes
 

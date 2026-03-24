@@ -1,0 +1,17 @@
+services:
+  api:
+    image: cnpj-cep-validation:latest
+    build:
+      context: .
+      dockerfile: tech-challenges/back_end/teahupoo/Dockerfile
+    ports:
+      - "${API_PORT:-8080}:8080"
+    environment:
+      Validation__PrimaryCepProvider: ${VALIDATION__PRIMARY_CEP_PROVIDER:-BrasilApi}
+      Validation__TimeoutMs: ${VALIDATION__TIMEOUT_MS:-800}
+      Validation__CnpjRetryCount: ${VALIDATION__CNPJ_RETRY_COUNT:-2}
+      Validation__CepPrimaryRetryCount: ${VALIDATION__CEP_PRIMARY_RETRY_COUNT:-2}
+      Validation__CepSecondaryRetryCount: ${VALIDATION__CEP_SECONDARY_RETRY_COUNT:-1}
+      Validation__CacheTtlMinutes: ${VALIDATION__CACHE_TTL_MINUTES:-5}
+      ExternalApis__BrasilApiBaseUrl: ${EXTERNAL_APIS__BRASIL_API_BASE_URL:-https://brasilapi.com.br}
+      ExternalApis__ViaCepBaseUrl: ${EXTERNAL_APIS__VIA_CEP_BASE_URL:-https://viacep.com.br}
