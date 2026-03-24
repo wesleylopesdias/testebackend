@@ -7870,11 +7870,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "e:\\Projetos\\testesbackend\\tests\\CnpjCepValidation.Architecture\\CnpjCepValidation.Architecture.csproj",
+      "projectUniqueName": "E:\\Projetos\\testesbackend\\tests\\CnpjCepValidation.Architecture\\CnpjCepValidation.Architecture.csproj",
       "projectName": "CnpjCepValidation.Architecture",
-      "projectPath": "e:\\Projetos\\testesbackend\\tests\\CnpjCepValidation.Architecture\\CnpjCepValidation.Architecture.csproj",
+      "projectPath": "E:\\Projetos\\testesbackend\\tests\\CnpjCepValidation.Architecture\\CnpjCepValidation.Architecture.csproj",
       "packagesPath": "C:\\Users\\matri\\.nuget\\packages\\",
-      "outputPath": "e:\\Projetos\\testesbackend\\tests\\CnpjCepValidation.Architecture\\obj\\",
+      "outputPath": "E:\\Projetos\\testesbackend\\tests\\CnpjCepValidation.Architecture\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\matri\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -7889,17 +7889,17 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Api\\CnpjCepValidation.Api.csproj": {
-              "projectPath": "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Api\\CnpjCepValidation.Api.csproj"
+            "E:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Api\\CnpjCepValidation.Api.csproj": {
+              "projectPath": "E:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Api\\CnpjCepValidation.Api.csproj"
             },
-            "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Application\\CnpjCepValidation.Application.csproj": {
-              "projectPath": "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Application\\CnpjCepValidation.Application.csproj"
+            "E:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Application\\CnpjCepValidation.Application.csproj": {
+              "projectPath": "E:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Application\\CnpjCepValidation.Application.csproj"
             },
-            "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Domain\\CnpjCepValidation.Domain.csproj": {
-              "projectPath": "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Domain\\CnpjCepValidation.Domain.csproj"
+            "E:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Domain\\CnpjCepValidation.Domain.csproj": {
+              "projectPath": "E:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Domain\\CnpjCepValidation.Domain.csproj"
             },
-            "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Infrastructure\\CnpjCepValidation.Infrastructure.csproj": {
-              "projectPath": "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Infrastructure\\CnpjCepValidation.Infrastructure.csproj"
+            "E:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Infrastructure\\CnpjCepValidation.Infrastructure.csproj": {
+              "projectPath": "E:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Infrastructure\\CnpjCepValidation.Infrastructure.csproj"
             }
           }
         }

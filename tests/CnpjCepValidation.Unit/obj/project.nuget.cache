@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Uve63e1H3cs=",
+  "dgSpecHash": "8kvWvCwSHws=",
   "success": true,
-  "projectFilePath": "e:\\Projetos\\testesbackend\\tests\\CnpjCepValidation.Unit\\CnpjCepValidation.Unit.csproj",
+  "projectFilePath": "E:\\Projetos\\testesbackend\\tests\\CnpjCepValidation.Unit\\CnpjCepValidation.Unit.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\matri\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\matri\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",

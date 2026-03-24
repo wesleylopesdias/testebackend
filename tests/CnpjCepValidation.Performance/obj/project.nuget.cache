@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UUNTXyjYaoM=",
+  "dgSpecHash": "sT1nO/rLi7o=",
   "success": true,
-  "projectFilePath": "e:\\Projetos\\testesbackend\\tests\\CnpjCepValidation.Performance\\CnpjCepValidation.Performance.csproj",
+  "projectFilePath": "E:\\Projetos\\testesbackend\\tests\\CnpjCepValidation.Performance\\CnpjCepValidation.Performance.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\matri\\.nuget\\packages\\commandlineparser\\2.9.1\\commandlineparser.2.9.1.nupkg.sha512",
     "C:\\Users\\matri\\.nuget\\packages\\consoletables\\2.4.2\\consoletables.2.4.2.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Jh+7DqShwgg=",
+  "dgSpecHash": "RkHO1ufOuDQ=",
   "success": true,
-  "projectFilePath": "e:\\Projetos\\testesbackend\\tests\\CnpjCepValidation.Integration\\CnpjCepValidation.Integration.csproj",
+  "projectFilePath": "E:\\Projetos\\testesbackend\\tests\\CnpjCepValidation.Integration\\CnpjCepValidation.Integration.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\matri\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
     "C:\\Users\\matri\\.nuget\\packages\\fluentassertions\\6.12.2\\fluentassertions.6.12.2.nupkg.sha512",

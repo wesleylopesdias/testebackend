@@ -1,0 +1,11 @@
+**/bin/
+**/obj/
+**/.vs/
+**/.vscode/
+**/*.user
+**/*.suo
+.git/
+.gitignore
+tests/
+tech-challenges/back_end/teahupoo/anti_patterns/
+tech-challenges/back_end/teahupoo/bot/

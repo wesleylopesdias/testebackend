@@ -10018,11 +10018,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "e:\\Projetos\\testesbackend\\tests\\CnpjCepValidation.Performance\\CnpjCepValidation.Performance.csproj",
+      "projectUniqueName": "E:\\Projetos\\testesbackend\\tests\\CnpjCepValidation.Performance\\CnpjCepValidation.Performance.csproj",
       "projectName": "CnpjCepValidation.Performance",
-      "projectPath": "e:\\Projetos\\testesbackend\\tests\\CnpjCepValidation.Performance\\CnpjCepValidation.Performance.csproj",
+      "projectPath": "E:\\Projetos\\testesbackend\\tests\\CnpjCepValidation.Performance\\CnpjCepValidation.Performance.csproj",
       "packagesPath": "C:\\Users\\matri\\.nuget\\packages\\",
-      "outputPath": "e:\\Projetos\\testesbackend\\tests\\CnpjCepValidation.Performance\\obj\\",
+      "outputPath": "E:\\Projetos\\testesbackend\\tests\\CnpjCepValidation.Performance\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\matri\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -10037,8 +10037,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Api\\CnpjCepValidation.Api.csproj": {
-              "projectPath": "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Api\\CnpjCepValidation.Api.csproj"
+            "E:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Api\\CnpjCepValidation.Api.csproj": {
+              "projectPath": "E:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Api\\CnpjCepValidation.Api.csproj"
             }
           }
         }
