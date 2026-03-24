@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\CnpjCepValidation.Api.props" />
+</Project>

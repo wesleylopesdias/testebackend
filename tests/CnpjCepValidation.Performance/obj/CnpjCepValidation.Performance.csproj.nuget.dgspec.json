@@ -1,0 +1,408 @@
+{
+  "format": 1,
+  "restore": {
+    "e:\\Projetos\\testesbackend\\tests\\CnpjCepValidation.Performance\\CnpjCepValidation.Performance.csproj": {}
+  },
+  "projects": {
+    "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Api\\CnpjCepValidation.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Api\\CnpjCepValidation.Api.csproj",
+        "projectName": "CnpjCepValidation.Api",
+        "projectPath": "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Api\\CnpjCepValidation.Api.csproj",
+        "packagesPath": "C:\\Users\\matri\\.nuget\\packages\\",
+        "outputPath": "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Api\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\matri\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Application\\CnpjCepValidation.Application.csproj": {
+                "projectPath": "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Application\\CnpjCepValidation.Application.csproj"
+              },
+              "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Infrastructure\\CnpjCepValidation.Infrastructure.csproj": {
+                "projectPath": "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Infrastructure\\CnpjCepValidation.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "warnAsError": [
+            "NU1605"
+          ],
+          "warnNotAsError": [
+            "NU1902",
+            "NU1903"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.6.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.416/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Application\\CnpjCepValidation.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Application\\CnpjCepValidation.Application.csproj",
+        "projectName": "CnpjCepValidation.Application",
+        "projectPath": "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Application\\CnpjCepValidation.Application.csproj",
+        "packagesPath": "C:\\Users\\matri\\.nuget\\packages\\",
+        "outputPath": "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\matri\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Domain\\CnpjCepValidation.Domain.csproj": {
+                "projectPath": "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Domain\\CnpjCepValidation.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "warnAsError": [
+            "NU1605"
+          ],
+          "warnNotAsError": [
+            "NU1902",
+            "NU1903"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.Extensions.Caching.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Options": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.416/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Domain\\CnpjCepValidation.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Domain\\CnpjCepValidation.Domain.csproj",
+        "projectName": "CnpjCepValidation.Domain",
+        "projectPath": "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Domain\\CnpjCepValidation.Domain.csproj",
+        "packagesPath": "C:\\Users\\matri\\.nuget\\packages\\",
+        "outputPath": "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\matri\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "warnAsError": [
+            "NU1605"
+          ],
+          "warnNotAsError": [
+            "NU1902",
+            "NU1903"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.416/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Infrastructure\\CnpjCepValidation.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Infrastructure\\CnpjCepValidation.Infrastructure.csproj",
+        "projectName": "CnpjCepValidation.Infrastructure",
+        "projectPath": "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Infrastructure\\CnpjCepValidation.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\matri\\.nuget\\packages\\",
+        "outputPath": "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\matri\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Application\\CnpjCepValidation.Application.csproj": {
+                "projectPath": "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Application\\CnpjCepValidation.Application.csproj"
+              },
+              "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Domain\\CnpjCepValidation.Domain.csproj": {
+                "projectPath": "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Domain\\CnpjCepValidation.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "warnAsError": [
+            "NU1605"
+          ],
+          "warnNotAsError": [
+            "NU1902",
+            "NU1903"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.Extensions.Caching.Memory": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.Extensions.Http.Resilience": {
+              "target": "Package",
+              "version": "[8.10.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.416/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "e:\\Projetos\\testesbackend\\tests\\CnpjCepValidation.Performance\\CnpjCepValidation.Performance.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "e:\\Projetos\\testesbackend\\tests\\CnpjCepValidation.Performance\\CnpjCepValidation.Performance.csproj",
+        "projectName": "CnpjCepValidation.Performance",
+        "projectPath": "e:\\Projetos\\testesbackend\\tests\\CnpjCepValidation.Performance\\CnpjCepValidation.Performance.csproj",
+        "packagesPath": "C:\\Users\\matri\\.nuget\\packages\\",
+        "outputPath": "e:\\Projetos\\testesbackend\\tests\\CnpjCepValidation.Performance\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\matri\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Api\\CnpjCepValidation.Api.csproj": {
+                "projectPath": "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Api\\CnpjCepValidation.Api.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "allWarningsAsErrors": true,
+          "warnAsError": [
+            "NU1605"
+          ],
+          "warnNotAsError": [
+            "NU1902",
+            "NU1903"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[6.12.2, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Testing": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.8.0, )"
+            },
+            "NBomber": {
+              "target": "Package",
+              "version": "[6.3.0, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.5.3, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[2.5.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.416/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
