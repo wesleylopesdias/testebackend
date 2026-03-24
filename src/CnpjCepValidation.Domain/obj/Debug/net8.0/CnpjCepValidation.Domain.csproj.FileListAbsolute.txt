@@ -9,3 +9,15 @@ E:\Projetos\testesbackend\src\CnpjCepValidation.Domain\obj\Debug\net8.0\CnpjCepV
 E:\Projetos\testesbackend\src\CnpjCepValidation.Domain\obj\Debug\net8.0\refint\CnpjCepValidation.Domain.dll
 E:\Projetos\testesbackend\src\CnpjCepValidation.Domain\obj\Debug\net8.0\CnpjCepValidation.Domain.pdb
 E:\Projetos\testesbackend\src\CnpjCepValidation.Domain\obj\Debug\net8.0\ref\CnpjCepValidation.Domain.dll
+E:\Projetos\testebackend\src\CnpjCepValidation.Domain\bin\Debug\net8.0\CnpjCepValidation.Domain.deps.json
+E:\Projetos\testebackend\src\CnpjCepValidation.Domain\bin\Debug\net8.0\CnpjCepValidation.Domain.dll
+E:\Projetos\testebackend\src\CnpjCepValidation.Domain\bin\Debug\net8.0\CnpjCepValidation.Domain.pdb
+E:\Projetos\testebackend\src\CnpjCepValidation.Domain\obj\Debug\net8.0\CnpjCepValidation.Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projetos\testebackend\src\CnpjCepValidation.Domain\obj\Debug\net8.0\CnpjCepValidation.Domain.AssemblyInfoInputs.cache
+E:\Projetos\testebackend\src\CnpjCepValidation.Domain\obj\Debug\net8.0\CnpjCepValidation.Domain.AssemblyInfo.cs
+E:\Projetos\testebackend\src\CnpjCepValidation.Domain\obj\Debug\net8.0\CnpjCepValidation.Domain.csproj.CoreCompileInputs.cache
+E:\Projetos\testebackend\src\CnpjCepValidation.Domain\obj\Debug\net8.0\CnpjCepValidation.Domain.sourcelink.json
+E:\Projetos\testebackend\src\CnpjCepValidation.Domain\obj\Debug\net8.0\CnpjCepValidation.Domain.dll
+E:\Projetos\testebackend\src\CnpjCepValidation.Domain\obj\Debug\net8.0\refint\CnpjCepValidation.Domain.dll
+E:\Projetos\testebackend\src\CnpjCepValidation.Domain\obj\Debug\net8.0\CnpjCepValidation.Domain.pdb
+E:\Projetos\testebackend\src\CnpjCepValidation.Domain\obj\Debug\net8.0\ref\CnpjCepValidation.Domain.dll

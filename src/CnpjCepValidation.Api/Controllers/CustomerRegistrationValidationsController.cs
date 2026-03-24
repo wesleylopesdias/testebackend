@@ -1,13 +1,17 @@
+using Asp.Versioning;
 using CnpjCepValidation.Application.Abstractions;
 using CnpjCepValidation.Application.DTOs;
 using CnpjCepValidation.Application.Exceptions;
 using CnpjCepValidation.Domain.ValueObjects;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 
 namespace CnpjCepValidation.Api.Controllers;
 
 [ApiController]
-[Route("api/v1/customer-registration-validations")]
+[ApiVersion("1.0")]
+[Route("api/v{version:apiVersion}/customer-registration-validations")]
+[EnableRateLimiting("fixed")]
 public sealed class CustomerRegistrationValidationsController : ControllerBase
 {
     private readonly IRegistrationValidationUseCase _useCase;
@@ -26,6 +30,7 @@ public sealed class CustomerRegistrationValidationsController : ControllerBase
     [ProducesResponseType(typeof(ValidateCustomerRegistrationResponse), StatusCodes.Status404NotFound)]
     [ProducesResponseType(typeof(ValidateCustomerRegistrationResponse), StatusCodes.Status503ServiceUnavailable)]
     [ProducesResponseType(typeof(ValidationProblemDetails), StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status429TooManyRequests)]
     public async Task<IActionResult> Validate(
         [FromBody] ValidateCustomerRegistrationApiRequest request,
         CancellationToken cancellationToken)
@@ -61,8 +66,8 @@ public sealed class CustomerRegistrationValidationsController : ControllerBase
         {
             _logger.LogError(
                 ex,
-                "Dependencia indisponivel ao validar CNPJ {Cnpj} / CEP {Cep}",
-                request.Cnpj,
+                "Dependencia indisponivel ao validar CNPJ {CnpjMasked} / CEP {Cep}",
+                MaskCnpj(request.Cnpj!),
                 request.Cep);
 
             var errorResponse = new ValidateCustomerRegistrationResponse(
@@ -74,6 +79,13 @@ public sealed class CustomerRegistrationValidationsController : ControllerBase
 
             return StatusCode(StatusCodes.Status503ServiceUnavailable, errorResponse);
         }
+    }
+
+    private static string MaskCnpj(string cnpj)
+    {
+        var digits = new string(cnpj.Where(char.IsDigit).ToArray());
+        if (digits.Length != 14) return "***";
+        return $"{digits[..2]}.{digits[2..5]}.***/{digits[8..12]}-**";
     }
 }
 

@@ -1,20 +1,18 @@
 using System.Net;
 using System.Net.Http.Json;
-using System.Text.Json;
 using CnpjCepValidation.Application.Abstractions;
 using CnpjCepValidation.Application.Exceptions;
 using CnpjCepValidation.Application.Models;
 using CnpjCepValidation.Domain.ValueObjects;
 using CnpjCepValidation.Infrastructure.ExternalClients.Models;
 using Microsoft.Extensions.Logging;
-using Polly.CircuitBreaker;
-using Polly.Timeout;
 
 namespace CnpjCepValidation.Infrastructure.ExternalClients;
 
 public sealed class ViaCepClient : ICepAddressProvider
 {
     public const string Provider = "ViaCep";
+    private const string ProviderLabel = "ViaCEP";
 
     private readonly HttpClient _httpClient;
     private readonly ILogger<ViaCepClient> _logger;
@@ -29,7 +27,7 @@ public sealed class ViaCepClient : ICepAddressProvider
 
     public async Task<CepAddressInfo?> GetAddressAsync(Cep cep, CancellationToken cancellationToken)
     {
-        try
+        return await ResilientHttpExecutor.ExecuteAsync(ProviderLabel, _logger, async () =>
         {
             var response = await _httpClient.GetAsync(
                 $"/ws/{cep.Value}/json/", cancellationToken);
@@ -63,44 +61,10 @@ public sealed class ViaCepClient : ICepAddressProvider
             }
 
             return ExternalAddressPayloadValidator.CreateCepAddress(
-                "ViaCEP",
+                ProviderLabel,
                 body.Uf,
                 body.Localidade,
                 body.Logradouro);
-        }
-        catch (DependencyUnavailableException)
-        {
-            throw;
-        }
-        catch (JsonException ex)
-        {
-            _logger.LogWarning(ex, "ViaCEP: payload invalido");
-            throw new DependencyUnavailableException("ViaCEP indisponivel (payload invalido).", ex);
-        }
-        catch (NotSupportedException ex)
-        {
-            _logger.LogWarning(ex, "ViaCEP: payload nao suportado");
-            throw new DependencyUnavailableException("ViaCEP indisponivel (payload invalido).", ex);
-        }
-        catch (BrokenCircuitException ex)
-        {
-            _logger.LogWarning(ex, "ViaCEP: circuit breaker aberto");
-            throw new DependencyUnavailableException("ViaCEP indisponivel (circuit breaker).", ex);
-        }
-        catch (TimeoutRejectedException ex)
-        {
-            _logger.LogWarning(ex, "ViaCEP: timeout");
-            throw new DependencyUnavailableException("ViaCEP indisponivel (timeout).", ex);
-        }
-        catch (HttpRequestException ex)
-        {
-            _logger.LogWarning(ex, "ViaCEP: falha de rede");
-            throw new DependencyUnavailableException("ViaCEP indisponivel (falha de rede).", ex);
-        }
-        catch (TaskCanceledException ex) when (!cancellationToken.IsCancellationRequested)
-        {
-            _logger.LogWarning(ex, "ViaCEP: timeout (cancelamento interno)");
-            throw new DependencyUnavailableException("ViaCEP indisponivel (timeout).", ex);
-        }
+        }, cancellationToken);
     }
 }

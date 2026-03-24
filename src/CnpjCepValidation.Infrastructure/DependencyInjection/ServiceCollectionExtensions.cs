@@ -21,6 +21,16 @@ public static class ServiceCollectionExtensions
         this IServiceCollection services,
         IConfiguration configuration)
     {
+        services.AddOptions<ValidationOptions>()
+            .Bind(configuration.GetSection(ValidationOptions.SectionName))
+            .ValidateDataAnnotations()
+            .ValidateOnStart();
+
+        services.AddOptions<ExternalApiOptions>()
+            .Bind(configuration.GetSection(ExternalApiOptions.SectionName))
+            .ValidateDataAnnotations()
+            .ValidateOnStart();
+
         var validationOptions = configuration
             .GetSection(ValidationOptions.SectionName)
             .Get<ValidationOptions>() ?? new ValidationOptions();
@@ -29,10 +39,8 @@ public static class ServiceCollectionExtensions
             .GetSection(ExternalApiOptions.SectionName)
             .Get<ExternalApiOptions>() ?? new ExternalApiOptions();
 
-        services.Configure<ValidationOptions>(
-            configuration.GetSection(ValidationOptions.SectionName));
-
         services.AddMemoryCache();
+        services.AddSingleton<IValidationCache, MemoryValidationCache>();
 
         RegisterCnpjClient(services, externalApiOptions, validationOptions);
         RegisterCepClients(services, externalApiOptions, validationOptions);

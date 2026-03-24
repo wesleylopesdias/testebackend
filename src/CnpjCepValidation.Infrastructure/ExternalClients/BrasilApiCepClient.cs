@@ -1,20 +1,18 @@
 using System.Net;
 using System.Net.Http.Json;
-using System.Text.Json;
 using CnpjCepValidation.Application.Abstractions;
 using CnpjCepValidation.Application.Exceptions;
 using CnpjCepValidation.Application.Models;
 using CnpjCepValidation.Domain.ValueObjects;
 using CnpjCepValidation.Infrastructure.ExternalClients.Models;
 using Microsoft.Extensions.Logging;
-using Polly.CircuitBreaker;
-using Polly.Timeout;
 
 namespace CnpjCepValidation.Infrastructure.ExternalClients;
 
 public sealed class BrasilApiCepClient : ICepAddressProvider
 {
     public const string Provider = "BrasilApi";
+    private const string ProviderLabel = "BrasilAPI CEP";
 
     private readonly HttpClient _httpClient;
     private readonly ILogger<BrasilApiCepClient> _logger;
@@ -29,14 +27,14 @@ public sealed class BrasilApiCepClient : ICepAddressProvider
 
     public async Task<CepAddressInfo?> GetAddressAsync(Cep cep, CancellationToken cancellationToken)
     {
-        try
+        return await ResilientHttpExecutor.ExecuteAsync(ProviderLabel, _logger, async () =>
         {
             var response = await _httpClient.GetAsync(
                 $"/api/cep/v2/{cep.Value}", cancellationToken);
 
             if (response.StatusCode == HttpStatusCode.NotFound)
             {
-                _logger.LogInformation("BrasilAPI CEP: endereço não encontrado para {Cep}", cep.Value);
+                _logger.LogInformation("BrasilAPI CEP: endereco nao encontrado para {Cep}", cep.Value);
                 return null;
             }
 
@@ -58,44 +56,10 @@ public sealed class BrasilApiCepClient : ICepAddressProvider
             }
 
             return ExternalAddressPayloadValidator.CreateCepAddress(
-                "BrasilAPI CEP",
+                ProviderLabel,
                 body.State,
                 body.City,
                 body.Street);
-        }
-        catch (DependencyUnavailableException)
-        {
-            throw;
-        }
-        catch (JsonException ex)
-        {
-            _logger.LogWarning(ex, "BrasilAPI CEP: payload invalido");
-            throw new DependencyUnavailableException("BrasilAPI CEP indisponivel (payload invalido).", ex);
-        }
-        catch (NotSupportedException ex)
-        {
-            _logger.LogWarning(ex, "BrasilAPI CEP: payload nao suportado");
-            throw new DependencyUnavailableException("BrasilAPI CEP indisponivel (payload invalido).", ex);
-        }
-        catch (BrokenCircuitException ex)
-        {
-            _logger.LogWarning(ex, "BrasilAPI CEP: circuit breaker aberto");
-            throw new DependencyUnavailableException("BrasilAPI CEP indisponível (circuit breaker).", ex);
-        }
-        catch (TimeoutRejectedException ex)
-        {
-            _logger.LogWarning(ex, "BrasilAPI CEP: timeout");
-            throw new DependencyUnavailableException("BrasilAPI CEP indisponível (timeout).", ex);
-        }
-        catch (HttpRequestException ex)
-        {
-            _logger.LogWarning(ex, "BrasilAPI CEP: falha de rede");
-            throw new DependencyUnavailableException("BrasilAPI CEP indisponível (falha de rede).", ex);
-        }
-        catch (TaskCanceledException ex) when (!cancellationToken.IsCancellationRequested)
-        {
-            _logger.LogWarning(ex, "BrasilAPI CEP: timeout (cancelamento interno)");
-            throw new DependencyUnavailableException("BrasilAPI CEP indisponível (timeout).", ex);
-        }
+        }, cancellationToken);
     }
 }

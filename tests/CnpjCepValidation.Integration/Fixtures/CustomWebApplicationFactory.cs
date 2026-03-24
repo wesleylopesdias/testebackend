@@ -1,3 +1,4 @@
+using CnpjCepValidation.Application.Abstractions;
 using CnpjCepValidation.Infrastructure.ExternalClients;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
@@ -23,7 +24,8 @@ public sealed class CustomWebApplicationFactory : WebApplicationFactory<Program>
             ["Validation:CepPrimaryRetryCount"] = "0",
             ["Validation:CepSecondaryRetryCount"] = "0",
             ["Validation:TimeoutMs"] = "5000",
-            ["Validation:CacheTtlMinutes"] = "0"
+            ["Validation:CacheTtlMinutes"] = "0",
+            ["Validation:NegativeCacheTtlMinutes"] = "0"
         };
 
         if (configurationOverrides is not null)
@@ -47,6 +49,10 @@ public sealed class CustomWebApplicationFactory : WebApplicationFactory<Program>
             var cacheDescriptor = services.FirstOrDefault(d => d.ServiceType == typeof(IMemoryCache));
             if (cacheDescriptor is not null) services.Remove(cacheDescriptor);
             services.AddSingleton<IMemoryCache, NoOpMemoryCache>();
+
+            var validationCacheDescriptor = services.FirstOrDefault(d => d.ServiceType == typeof(IValidationCache));
+            if (validationCacheDescriptor is not null) services.Remove(validationCacheDescriptor);
+            services.AddSingleton<IValidationCache, NoOpValidationCache>();
 
             services.AddHttpClient<BrasilApiCnpjClient>()
                 .ConfigurePrimaryHttpMessageHandler(() => CnpjHandler);

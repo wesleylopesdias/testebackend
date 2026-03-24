@@ -13,5 +13,12 @@ services:
       Validation__CepPrimaryRetryCount: ${VALIDATION__CEP_PRIMARY_RETRY_COUNT:-2}
       Validation__CepSecondaryRetryCount: ${VALIDATION__CEP_SECONDARY_RETRY_COUNT:-1}
       Validation__CacheTtlMinutes: ${VALIDATION__CACHE_TTL_MINUTES:-5}
+      Validation__NegativeCacheTtlMinutes: ${VALIDATION__NEGATIVE_CACHE_TTL_MINUTES:-1}
       ExternalApis__BrasilApiBaseUrl: ${EXTERNAL_APIS__BRASIL_API_BASE_URL:-https://brasilapi.com.br}
       ExternalApis__ViaCepBaseUrl: ${EXTERNAL_APIS__VIA_CEP_BASE_URL:-https://viacep.com.br}
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health/live"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s

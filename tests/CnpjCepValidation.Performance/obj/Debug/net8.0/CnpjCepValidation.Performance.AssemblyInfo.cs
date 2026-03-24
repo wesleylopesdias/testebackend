@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CnpjCepValidation.Performance")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4dcfd66386ba067b06fd6e989adac99e21121bb2")]
 [assembly: System.Reflection.AssemblyProductAttribute("CnpjCepValidation.Performance")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CnpjCepValidation.Performance")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

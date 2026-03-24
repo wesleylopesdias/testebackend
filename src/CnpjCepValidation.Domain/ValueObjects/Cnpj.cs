@@ -8,34 +8,56 @@ public sealed record Cnpj
 
     public static Cnpj Create(string input)
     {
-        ArgumentException.ThrowIfNullOrWhiteSpace(input, nameof(input));
-
-        var digits = new string(input.Where(char.IsDigit).ToArray());
-
-        if (digits.Length != 14)
-            throw new ArgumentException("CNPJ deve ter 14 dígitos.", nameof(input));
-
-        if (digits.Distinct().Count() == 1)
-            throw new ArgumentException("CNPJ com todos os dígitos iguais é inválido.", nameof(input));
-
-        if (!HasValidCheckDigits(digits))
-            throw new ArgumentException("CNPJ com dígitos verificadores inválidos.", nameof(input));
+        if (!TryValidate(input, out var digits, out var error))
+            throw new ArgumentException(error, nameof(input));
 
         return new Cnpj(digits);
     }
 
     public static bool TryCreate(string input, out Cnpj? cnpj)
     {
-        try
+        if (TryValidate(input, out var digits, out _))
         {
-            cnpj = Create(input);
+            cnpj = new Cnpj(digits);
             return true;
         }
-        catch
+
+        cnpj = null;
+        return false;
+    }
+
+    private static bool TryValidate(string? input, out string digits, out string? errorMessage)
+    {
+        digits = string.Empty;
+        errorMessage = null;
+
+        if (string.IsNullOrWhiteSpace(input))
         {
-            cnpj = null;
+            errorMessage = "CNPJ nao pode ser vazio.";
             return false;
         }
+
+        digits = new string(input.Where(char.IsDigit).ToArray());
+
+        if (digits.Length != 14)
+        {
+            errorMessage = "CNPJ deve ter 14 digitos.";
+            return false;
+        }
+
+        if (digits.Distinct().Count() == 1)
+        {
+            errorMessage = "CNPJ com todos os digitos iguais e invalido.";
+            return false;
+        }
+
+        if (!HasValidCheckDigits(digits))
+        {
+            errorMessage = "CNPJ com digitos verificadores invalidos.";
+            return false;
+        }
+
+        return true;
     }
 
     private static bool HasValidCheckDigits(string digits)

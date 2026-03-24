@@ -21,13 +21,13 @@ public sealed class ValidateCustomerRegistrationUseCaseTests
     private readonly Mock<ICompanyRegistryClient> _companyClient = new();
     private readonly Mock<ICepAddressResolver> _cepResolver = new();
     private readonly Mock<IAddressComparer> _addressComparer = new();
-    private readonly IMemoryCache _cache;
+    private readonly IValidationCache _cache;
     private readonly ValidateCustomerRegistrationUseCase _sut;
 
     public ValidateCustomerRegistrationUseCaseTests()
     {
-        _cache = new MemoryCache(new MemoryCacheOptions());
-        var options = Options.Create(new ValidationOptions { CacheTtlMinutes = 5 });
+        _cache = new MemoryCacheValidationCache(new MemoryCache(new MemoryCacheOptions()));
+        var options = Options.Create(new ValidationOptions { CacheTtlMinutes = 5, NegativeCacheTtlMinutes = 1 });
 
         _sut = new ValidateCustomerRegistrationUseCase(
             _companyClient.Object,
@@ -215,5 +215,33 @@ public sealed class ValidateCustomerRegistrationUseCaseTests
         _cepResolver.Verify(
             r => r.ResolveAsync(It.IsAny<Cep>(), It.IsAny<CancellationToken>()),
             Times.Once);
+    }
+
+    [Fact]
+    public async Task ExecuteAsync_CompanyNotFound_SecondCallUsesNegativeCache()
+    {
+        _companyClient
+            .Setup(c => c.GetCompanyAsync(It.IsAny<Cnpj>(), It.IsAny<CancellationToken>()))
+            .ReturnsAsync((CompanyInfo?)null);
+
+        await _sut.ExecuteAsync(
+            new ValidateCustomerRegistrationRequest(ValidCnpj, ValidCep),
+            CancellationToken.None);
+
+        await _sut.ExecuteAsync(
+            new ValidateCustomerRegistrationRequest(ValidCnpj, ValidCep),
+            CancellationToken.None);
+
+        _companyClient.Verify(
+            c => c.GetCompanyAsync(It.IsAny<Cnpj>(), It.IsAny<CancellationToken>()),
+            Times.Once);
+    }
+
+    private sealed class MemoryCacheValidationCache : IValidationCache
+    {
+        private readonly IMemoryCache _cache;
+        public MemoryCacheValidationCache(IMemoryCache cache) => _cache = cache;
+        public bool TryGet<T>(string key, out T? value) => _cache.TryGetValue(key, out value);
+        public void Set<T>(string key, T value, TimeSpan ttl) => _cache.Set(key, value, ttl);
     }
 }

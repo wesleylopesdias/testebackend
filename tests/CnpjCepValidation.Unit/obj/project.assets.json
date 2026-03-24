@@ -542,6 +542,26 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
+      "Microsoft.Extensions.Options.DataAnnotations/8.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0",
+          "Microsoft.Extensions.Options": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.Options.DataAnnotations.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Options.DataAnnotations.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
       "Microsoft.Extensions.Primitives/9.0.0": {
         "type": "package",
         "compile": {
@@ -2472,7 +2492,8 @@
           "CnpjCepValidation.Domain": "1.0.0",
           "Microsoft.Extensions.Caching.Abstractions": "8.0.0",
           "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
-          "Microsoft.Extensions.Options": "8.0.0"
+          "Microsoft.Extensions.Options": "8.0.0",
+          "Microsoft.Extensions.Options.DataAnnotations": "8.0.0"
         },
         "compile": {
           "bin/placeholder/CnpjCepValidation.Application.dll": {}
@@ -2498,7 +2519,8 @@
           "CnpjCepValidation.Application": "1.0.0",
           "CnpjCepValidation.Domain": "1.0.0",
           "Microsoft.Extensions.Caching.Memory": "9.0.0",
-          "Microsoft.Extensions.Http.Resilience": "8.10.0"
+          "Microsoft.Extensions.Http.Resilience": "8.10.0",
+          "Microsoft.Extensions.Options.DataAnnotations": "8.0.0"
         },
         "compile": {
           "bin/placeholder/CnpjCepValidation.Infrastructure.dll": {}
@@ -3400,6 +3422,38 @@
         "lib/netstandard2.0/Microsoft.Extensions.Options.ConfigurationExtensions.xml",
         "microsoft.extensions.options.configurationextensions.8.0.0.nupkg.sha512",
         "microsoft.extensions.options.configurationextensions.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.Options.DataAnnotations/8.0.0": {
+      "sha512": "z6p6q/N/hiU19A9tK7pjhXHpiYArO4oIICipxUviBEIOiDIoKRO7k6qItvw7alKcLtfHZOWmspuSKpvIvH0N8w==",
+      "type": "package",
+      "path": "microsoft.extensions.options.dataannotations/8.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.Options.DataAnnotations.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Options.DataAnnotations.targets",
+        "lib/net462/Microsoft.Extensions.Options.DataAnnotations.dll",
+        "lib/net462/Microsoft.Extensions.Options.DataAnnotations.xml",
+        "lib/net6.0/Microsoft.Extensions.Options.DataAnnotations.dll",
+        "lib/net6.0/Microsoft.Extensions.Options.DataAnnotations.xml",
+        "lib/net7.0/Microsoft.Extensions.Options.DataAnnotations.dll",
+        "lib/net7.0/Microsoft.Extensions.Options.DataAnnotations.xml",
+        "lib/net8.0/Microsoft.Extensions.Options.DataAnnotations.dll",
+        "lib/net8.0/Microsoft.Extensions.Options.DataAnnotations.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Options.DataAnnotations.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Options.DataAnnotations.xml",
+        "lib/netstandard2.1/Microsoft.Extensions.Options.DataAnnotations.dll",
+        "lib/netstandard2.1/Microsoft.Extensions.Options.DataAnnotations.xml",
+        "microsoft.extensions.options.dataannotations.8.0.0.nupkg.sha512",
+        "microsoft.extensions.options.dataannotations.nuspec",
         "useSharedDesignerContext.txt"
       ]
     },
@@ -7452,11 +7506,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Projetos\\testesbackend\\tests\\CnpjCepValidation.Unit\\CnpjCepValidation.Unit.csproj",
+      "projectUniqueName": "E:\\Projetos\\testebackend\\tests\\CnpjCepValidation.Unit\\CnpjCepValidation.Unit.csproj",
       "projectName": "CnpjCepValidation.Unit",
-      "projectPath": "E:\\Projetos\\testesbackend\\tests\\CnpjCepValidation.Unit\\CnpjCepValidation.Unit.csproj",
+      "projectPath": "E:\\Projetos\\testebackend\\tests\\CnpjCepValidation.Unit\\CnpjCepValidation.Unit.csproj",
       "packagesPath": "C:\\Users\\matri\\.nuget\\packages\\",
-      "outputPath": "E:\\Projetos\\testesbackend\\tests\\CnpjCepValidation.Unit\\obj\\",
+      "outputPath": "E:\\Projetos\\testebackend\\tests\\CnpjCepValidation.Unit\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\matri\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -7471,14 +7525,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "E:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Application\\CnpjCepValidation.Application.csproj": {
-              "projectPath": "E:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Application\\CnpjCepValidation.Application.csproj"
+            "E:\\Projetos\\testebackend\\src\\CnpjCepValidation.Application\\CnpjCepValidation.Application.csproj": {
+              "projectPath": "E:\\Projetos\\testebackend\\src\\CnpjCepValidation.Application\\CnpjCepValidation.Application.csproj"
             },
-            "E:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Domain\\CnpjCepValidation.Domain.csproj": {
-              "projectPath": "E:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Domain\\CnpjCepValidation.Domain.csproj"
+            "E:\\Projetos\\testebackend\\src\\CnpjCepValidation.Domain\\CnpjCepValidation.Domain.csproj": {
+              "projectPath": "E:\\Projetos\\testebackend\\src\\CnpjCepValidation.Domain\\CnpjCepValidation.Domain.csproj"
             },
-            "E:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Infrastructure\\CnpjCepValidation.Infrastructure.csproj": {
-              "projectPath": "E:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Infrastructure\\CnpjCepValidation.Infrastructure.csproj"
+            "E:\\Projetos\\testebackend\\src\\CnpjCepValidation.Infrastructure\\CnpjCepValidation.Infrastructure.csproj": {
+              "projectPath": "E:\\Projetos\\testebackend\\src\\CnpjCepValidation.Infrastructure\\CnpjCepValidation.Infrastructure.csproj"
             }
           }
         }

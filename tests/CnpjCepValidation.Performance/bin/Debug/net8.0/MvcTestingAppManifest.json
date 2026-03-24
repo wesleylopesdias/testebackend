@@ -1,6 +1,6 @@
 {
-  "CnpjCepValidation.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Api",
-  "CnpjCepValidation.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Application",
-  "CnpjCepValidation.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Domain",
-  "CnpjCepValidation.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "e:\\Projetos\\testesbackend\\src\\CnpjCepValidation.Infrastructure"
+  "CnpjCepValidation.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "E:\\Projetos\\testebackend\\src\\CnpjCepValidation.Api",
+  "CnpjCepValidation.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "E:\\Projetos\\testebackend\\src\\CnpjCepValidation.Application",
+  "CnpjCepValidation.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "E:\\Projetos\\testebackend\\src\\CnpjCepValidation.Domain",
+  "CnpjCepValidation.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "E:\\Projetos\\testebackend\\src\\CnpjCepValidation.Infrastructure"
 }
