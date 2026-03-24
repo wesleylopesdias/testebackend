@@ -77,7 +77,18 @@ docker build -f tech-challenges\back_end\teahupoo\Dockerfile -t cnpj-cep-validat
 docker run --rm -p 8080:8080 cnpj-cep-validation
 ```
 
-Swagger no container:
+Health checks no container:
+
+```text
+http://localhost:8080/health/live
+http://localhost:8080/health/ready
+```
+
+Swagger no container somente em `Development`:
+
+```powershell
+docker run --rm -p 8080:8080 -e ASPNETCORE_ENVIRONMENT=Development cnpj-cep-validation
+```
 
 ```text
 http://localhost:8080/swagger
@@ -116,6 +127,7 @@ O arquivo `compose.yaml` aceita sobrescrita via variaveis de ambiente. Exemplo d
 
 ```dotenv
 API_PORT=8081
+ASPNETCORE_ENVIRONMENT=Development
 VALIDATION__PRIMARY_CEP_PROVIDER=ViaCep
 VALIDATION__TIMEOUT_MS=1200
 ```
@@ -151,3 +163,4 @@ dotnet test tests\CnpjCepValidation.Performance\CnpjCepValidation.Performance.cs
 - A comparacao considera UF, cidade e logradouro apos normalizacao.
 - Os testes de integracao usam stubs HTTP para garantir determinismo.
 - Em chamadas reais, os provedores publicos podem oscilar e retornar `503`.
+- Em containers, o ambiente padrao e `Production`; para expor `/swagger`, defina `ASPNETCORE_ENVIRONMENT=Development`.
